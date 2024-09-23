@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(12, 12, 12);
+    color: white;
+}
+
+/*sidebar and content */
+.container{
+    display: flex;
+    height: 100vh;
+}
+
+/*sidebar style*/
+.sidebar{
+    padding: 3px;
+    width: 250px;
+    background-color:  #c0cf9d;
+    color: white;
+    padding-top: 1rem;
+    position: fixed;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    border-right: 1px solid #C5F5FA;
+    z-index: 1000;
+}
+
+.sidebar .logo{
+    text-align: center;
+    background-color: #c5f5fa;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+.sidebar ul{
+    list-style: none;
+    padding-left: 0;
+}
+.sidebar ul li {
+    padding: 5px;
+    text-align: left;
+}
+.sidebar ul li a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    display: block;
+}
+.sidebar ul li a:hover{
+    background-color: #c5f5fa;
+    color: black;
+    margin-left: 10px;
+    transition: .4s;
+}
+.content{
+    margin-left: 250px;
+    padding: 1rem;
+    width: 100%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+}
+
+h1{
+    margin-left: 10px;
+}
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger span{
+    width: 30px;
+    height: 3px;
+    background-color:  #c0cf9d;
+    margin: 4px 0;
+}
+.hero{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-content{
+    position: relative;
+    bottom: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-content h3{
+    font-size: clamp(20px,4vw,40px);
+    margin-bottom: 10px;
+}
+.hero-content h1{
+    font-size: clamp(25px,4vw,70px);
+    margin-bottom: 10px;
+}
+.hero-content p{
+    font-size: clamp(2px,8vw,20px);
+    text-transform: lowercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.hero-content p a{
+    margin: 10px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #c0cf9d;
+    color: black;
+    border-radius: 5px;
+}
+.hero-content p a:hover{
+    background-color: transparent;
+    color:  #c0cf9d;
+    transition: 0.4s;
+    border: 1.5px solid   #c0cf9d;
+}
+footer{
+    position: relative;
+    top: 35%;
+}
+
+/*Track your product css*/
+.track-product{
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.track-product .head{
+    font-size: clamp(40px,4vw,70px);
+    text-decoration: underline 3px  #c0cf9d;
+    color: #c0cf9d;
+    margin-bottom: 100px;
+}
+.track-product form {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    max-width: 600px;
+    margin-bottom: 100px;
+}
+.track-product form label{
+    font-size: clamp(10px,4vw,25px);
+}
+.track-product form input{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    outline: #c0cf9d;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #c0cf9d;
+    color: azure;
+    
+}
+form button{
+    width: 200px;
+    height: 60px;
+    border: none;
+    color: #131414;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #C5F5FA;
+    cursor: pointer;
+
+}
+form button:hover{
+    border: 1px solid #C5F5FA;
+    color: black;
+    background-color: transparent;
+    transition: .4s;
+}
+.clear{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #C5F5FA;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.clear:hover{
+    background-color: transparent;
+    border: 1px solid #C5F5FA;
+    color: black;
+    transition: .4s;
+
+}
+
+table{
+    width: 60%;
+    align-self: center;
+    border-collapse: collapse;
+    
+}
+table,th ,td {
+    border: 1px solid #c0cf9d;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+#totalRow{
+    font-weight: bold;
+}
+
+
+@media (max-width: 480px){
+    .sidebar{
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .content{
+        margin-left: 0;
+    }
+    .hamburger{
+        display: flex;
+    }
+    marquee h1{
+        font-size: 20px;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content h1{
+        font-size: 18px;
+    }
+    .hero-content h3{
+        font-size: 15px;
+    }
+    .hero-content p{
+        font-size: 16px;
+    }
+
+    form{
+        width: 35%;
+        object-fit: cover;
+    }
+    form button{
+        width: 120px;
+        height: 35px;
+        font-size: 15px;
+        text-align: center;
+        position: relative;
+        left: 20%;
+    }
+    .track-product form input{
+        width: 200px;
+        font-size: 13px;
+    }
+    .clear{
+        width: 100px;
+        height: 35px;
+        font-size: 15px;
+    }
+    .head{
+        text-align: center;
+        font-size: 10px;
+        /* width: 50%; */
+        object-fit: cover;
+    }
+    table{
+        width: 30%;
+        object-fit: cover;
+        font-size: 10px;
+    }
+    th, td {
+        padding: 0;
+        text-align: center;
+    }
+    footer{
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+}
+.mode{
+    
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 120px;
+    background-color: black;
+    color: white;
+    border: none;
+
+}
+.mode-container{
+    position: absolute;
+    top: 96%;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.white-mode{
+    background-color: white;
+    color: black;
+    label{
+        color: black;
+    }
+    form input{
+        color: black;
+    }
+    .sidebar{
+        background-color: rgb(5, 1, 20);
+    }
+    .mode{
+        background-color: white;
+        color: black;
+    }
+}
